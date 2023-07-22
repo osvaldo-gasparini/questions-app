@@ -1,4 +1,5 @@
-import Questions from "@/components/button";
+import Questions from "@/components/Questions/questions";
+import QuestionsMapper from "@/components/Questions/questionsNoSSR";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = "https://pxqlqhtlvomqqbcbnjmx.supabase.co";
@@ -24,8 +25,7 @@ export default async function Home() {
         placeholder="Type your question"
         className="rounded-full px-4 py-3 w-10/12 bg-gray-700/75 text-white placeholder:text-gray-300 placeholder:text-center"
       />
-      <Questions questions={questions} />
-      
+      <QuestionsMapper questions={questions} />
     </main>
   );
 }

@@ -4,7 +4,7 @@ import { Question } from "@/types/types";
 
 const Questions = ({ questions }: { questions: Question[] }) => {
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 mx-4">
+    <section className="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {questions?.map((question: Question) => {
         const diff =
           (new Date().getTime() - new Date(question.created_at).getTime()) /

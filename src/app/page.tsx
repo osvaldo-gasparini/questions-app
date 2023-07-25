@@ -1,35 +1,22 @@
 import QuestionsMapper from "@/components/Questions/questionsNoSSR";
+import { fetchQuestions, postQuestion } from "@/services/questions";
 import { Question } from "@/types/types";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = "https://pxqlqhtlvomqqbcbnjmx.supabase.co";
-const supabase = createClient(supabaseUrl, process.env.SUPABASE_KEY!, {
-  auth: { persistSession: false },
-});
-
-const fetchQuestions = async () => {
-  try {
-    const { data } = await supabase.from("questions").select("*");
-    return data as Question[];
-  } catch (error) {
-    console.error("Error:", error);
-    return [];
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_KEY!,
+  {
+    auth: { persistSession: false },
   }
-};
+);
 
 export default async function Home() {
   const questions = await fetchQuestions();
 
-  const handleSubmit = async (formData: FormData) => {
-    "use server";
-
-    const question = formData.get("question");
-    await supabase.from("question").insert({ text: question });
-  };
-
   return (
     <main className="flex flex-col items-center justify-center w-full px-10">
-      <form action={handleSubmit} className="flex flex-col items-center gap-2">
+      <form action={postQuestion} className="flex flex-col items-center gap-2">
         <input
           name="question"
           type="text"

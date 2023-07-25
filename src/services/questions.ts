@@ -25,16 +25,3 @@ export const postQuestion = async (formData: FormData) => {
   const question = formData.get("question");
   await supabase.from("questions").insert({ text: question });
 };
-
-export const deleteQuestion = async (question: string) => {
-  try {
-    const { error } = await supabase
-      .from("questions")
-      .delete()
-      .eq("text", question);
-    console.log(error);
-  } catch (error) {
-    console.error("Error:", error);
-    return [];
-  }
-};

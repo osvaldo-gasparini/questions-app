@@ -3,9 +3,6 @@
 import { Question } from "@/types/types";
 
 const Questions = ({ questions }: { questions: Question[] }) => {
-
-  
-
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {questions?.map((question: Question) => {
@@ -23,9 +20,15 @@ const Questions = ({ questions }: { questions: Question[] }) => {
         };
 
         return (
-          <div key={question.id} className="bg-white rounded-2xl p-4">
+          <div
+            key={question.id}
+            className="bg-white rounded-2xl cursor-pointer p-4"
+          >
             <p className="text-xl text-black font-semibold">{question.text}</p>
-            <p className="text-gray-400 font-medium">{timeAgo()}</p>
+
+            <div className="flex flex-row justify-between items-center">
+              <p className="text-gray-400 font-medium">{timeAgo()}</p>
+            </div>
           </div>
         );
       })}

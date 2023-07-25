@@ -1,5 +1,6 @@
 import { Question } from "@/types/types";
 import { createClient } from "@supabase/supabase-js";
+import { revalidatePath } from "next/cache";
 
 const supabase = createClient(
   process.env.SUPABASE_URL!,
@@ -24,4 +25,6 @@ export const postQuestion = async (formData: FormData) => {
 
   const question = formData.get("question");
   await supabase.from("questions").insert({ text: question });
+
+  revalidatePath("/");
 };

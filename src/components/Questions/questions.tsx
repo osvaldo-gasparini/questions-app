@@ -2,12 +2,15 @@
 
 import { Question } from "@/types/types";
 import QuestionBox from "../QuestionBox";
+import Link from "next/link";
 
 const Questions = ({ questions }: { questions: Question[] }) => {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
       {questions?.map((question: Question) => (
-        <QuestionBox key={question.id} question={question} />
+        <Link href={`/${question.id}`} key={question.id}>
+          <QuestionBox question={question} />
+        </Link>
       ))}
     </section>
   );

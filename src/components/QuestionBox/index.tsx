@@ -1,6 +1,7 @@
 import { Question } from "@/types/types";
 
 const QuestionBox = ({ question }: { question: Question }) => {
+
   const diff =
     (new Date().getTime() - new Date(question.created_at).getTime()) /
     (1000 * 60 * 60);

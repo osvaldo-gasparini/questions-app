@@ -10,13 +10,27 @@ const supabase = createClient(
   }
 );
 
-export const fetchQuestions = async () => {
+export const fetchAllQuestions = async () => {
   try {
     const { data } = await supabase.from("questions").select("*");
     return data as Question[];
   } catch (error) {
     console.error("Error:", error);
     return [];
+  }
+};
+
+export const fetchQuestionById = async (id: string) => {
+  try {
+    const { data } = await supabase
+      .from("questions")
+      .select()
+      .eq("id", id)
+      .single();
+    return data as Question;
+  } catch (error) {
+    console.error("Error:", error);
+    return null;
   }
 };
 

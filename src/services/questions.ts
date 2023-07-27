@@ -1,3 +1,5 @@
+"use server";
+
 import { Question } from "@/types/types";
 import { createClient } from "@supabase/supabase-js";
 import { revalidatePath } from "next/cache";

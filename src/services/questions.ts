@@ -36,10 +36,12 @@ export const fetchQuestionById = async (id: string) => {
   }
 };
 
-export const postQuestion = async (formData: FormData) => {
+export const postQuestion = async (
+  question: string /* formData: FormData */
+) => {
   "use server";
 
-  const question = formData.get("question");
+  /* const question = formData.get("question"); */
   await supabase.from("questions").insert({ text: question });
 
   revalidatePath("/");

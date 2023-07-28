@@ -4,7 +4,7 @@ import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "QuestiGO",
+  title: "ClueAsk",
   description: "Personal Project",
 };
 
@@ -16,11 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} flex flex-col items-center bg-gradient-to-t from-cyan-500 to-blue-500 min-h-screen`}
+        className={`${montserrat.className} bg-white-steam min-h-screen px-10`}
       >
-        <header>
-          <h1 className="text-3xl m-5">
-            <a href="/">QuestiGO</a>
+        <header className="mb-10">
+          <h1 className="text-3xl my-5 text-black-oil font-black">
+            <a href="/">ClueAsk</a>
           </h1>
         </header>
         {children}

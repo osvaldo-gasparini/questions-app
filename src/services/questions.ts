@@ -46,3 +46,17 @@ export const postQuestion = async (
 
   revalidatePath("/");
 };
+
+export const deleteQuestion = async (id: string) => {
+  "use server";
+
+  try {
+    const { error } = await supabase.from("questions").delete().eq("id", id);
+    if (error === null) {
+      return true;
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    return [];
+  }
+};

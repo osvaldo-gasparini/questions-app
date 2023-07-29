@@ -16,7 +16,7 @@ const QuestionBox = ({ question }: { question: Question }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl cursor-pointer p-4">
+    <div className="bg-white rounded-2xl cursor-pointer p-4 h-full">
       <p className="text-xl text-black font-semibold">{question.text}</p>
       <div className="flex flex-row justify-between items-center">
         <p className="text-gray-400 font-medium">{timeAgo()}</p>

@@ -13,7 +13,7 @@ export default async function Home() {
   const questions = await fetchAllQuestions();
 
   return (
-    <main className="flex flex-col items-center justify-center w-full">
+    <main className="flex flex-col items-center justify-center w-full max-w-5xl mx-auto">
       <Form />
       <QuestionsMapper questions={questions} />
     </main>

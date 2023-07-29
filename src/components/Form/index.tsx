@@ -12,12 +12,12 @@ const Form = () => {
       postQuestion(inputValue);
       return;
     }
-    setButtonMsg("You need to write something before!")
+    setButtonMsg("You need to write something before!");
   };
 
   return (
-    <div className="flex flex-col items-center w-full mb-4">
-      <div className="flex flex-row bg-white justify-between shadow-inner rounded-t-3xl px-4 py-2 w-full relative">
+    <div className="flex flex-col items-center w-full mb-4 max-w-md gap-2">
+      <div className="flex flex-row bg-white justify-between shadow-inner rounded-3xl px-4 py-2 w-full relative">
         <input
           value={inputValue}
           name="question"
@@ -40,7 +40,7 @@ const Form = () => {
         </button>
       </div>
       <button
-        className="bg-black-oil text-white-steam shadow-inner rounded-b-3xl w-full py-2"
+        className="bg-black-oil text-white-steam shadow-inner rounded-3xl w-fit px-6 py-2"
         type="submit"
         onClick={onSubmit}
       >

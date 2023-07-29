@@ -10,7 +10,7 @@ export default async function Question({
   const question = await fetchQuestionById(id);
 
   return (
-    <main className="px-10 flex flex-col gap-2">
+    <main className="flex flex-col gap-2">
       <Link className="px-1 font-medium w-fit" href="/">
         ← Go back
       </Link>

@@ -8,7 +8,11 @@ const Questions = ({ questions }: { questions: Question[] }) => {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
       {questions?.map((question: Question) => (
-        <Link href={`/${question.id}`} key={question.id}>
+        <Link
+          className="cursor-pointer"
+          href={`/${question.id}`}
+          key={question.id}
+        >
           <QuestionBox question={question} />
         </Link>
       ))}

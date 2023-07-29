@@ -1,7 +1,6 @@
 import { Question } from "@/types/types";
 
 const QuestionBox = ({ question }: { question: Question }) => {
-
   const diff =
     (new Date().getTime() - new Date(question.created_at).getTime()) /
     (1000 * 60 * 60);
@@ -16,7 +15,7 @@ const QuestionBox = ({ question }: { question: Question }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl cursor-pointer p-4 h-full">
+    <div className="bg-white rounded-2xl p-4 h-full">
       <p className="text-xl text-black font-semibold">{question.text}</p>
       <div className="flex flex-row justify-between items-center">
         <p className="text-gray-400 font-medium">{timeAgo()}</p>

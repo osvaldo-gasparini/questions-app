@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import QuestionBox from "@/components/QuestionBox";
 import { fetchQuestionById } from "@/services/questions";
 import Link from "next/link";
@@ -11,9 +12,11 @@ export default async function Question({
 
   return (
     <main className="flex flex-col gap-2">
-      <Link className="px-1 font-medium w-fit" href="/">
-        ← Go back
-      </Link>
+      <div className="flex flex-row justify-between">
+        <Link className="px-2 w-fit" href="/">
+          ← Go back
+        </Link>
+      </div>
       {question !== null ? (
         <QuestionBox question={question} />
       ) : (

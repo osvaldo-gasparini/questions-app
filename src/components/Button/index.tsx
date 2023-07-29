@@ -9,6 +9,7 @@ const ButtonDelete = ({ id }: { id: string }) => {
     const res = await deleteQuestion(id);
     if (res) {
       router.push("/");
+      router.refresh();
     }
   };
 

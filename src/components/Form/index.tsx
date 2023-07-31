@@ -17,7 +17,7 @@ const Form = () => {
 
   return (
     <div className="flex flex-col items-center w-full mb-4 max-w-md gap-2">
-      <div className="flex flex-row bg-white justify-between shadow-inner rounded-3xl px-4 py-2 w-full relative">
+      <div className="flex flex-row justify-between w-full relative">
         <input
           value={inputValue}
           name="question"
@@ -26,7 +26,7 @@ const Form = () => {
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
-          className="bg-inherit w-full border-none placeholder:text-gray-400 placeholder:text-center focus:placeholder:text-black-oil focus:outline-none"
+          className="w-full bg-white shadow-inner px-4 py-2 rounded-3xl border-none placeholder:text-gray-400 placeholder:text-center focus:placeholder:text-black-oil focus:outline-none"
         />
         <button
           className={`${
